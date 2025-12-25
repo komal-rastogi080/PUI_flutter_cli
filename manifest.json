@@ -1,0 +1,10 @@
+
+{
+  "components": {
+    "sidebar": {
+      "path": "components/sidebar",
+      "files": ["sidebar.dart", "constants.dart"],
+      "description": "Responsive Flutter sidebar"
+    }
+  }
+}
