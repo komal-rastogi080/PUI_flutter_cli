@@ -1,7 +1,7 @@
 {
   "components": {
     "sidebar01": {
-      "path": "components/sidebar01",
+      "path": "components/sidebar_01",
       "files": [
         "container.dart",
         "drawer.dart",
@@ -11,7 +11,7 @@
       "description": "Responsive sidebar with drawer + theme toggle"
     },
     "sidebar02": {
-      "path": "components/sidebar02",
+      "path": "components/sidebar_02",
       "files": [
         "sidebar.dart",
         "constants.dart"
