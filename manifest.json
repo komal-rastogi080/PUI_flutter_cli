@@ -6,7 +6,8 @@
         "container.dart",
         "drawer.dart",
         "item.dart",
-        "theme.dart"
+        "theme.dart",
+        "Readme.md"
       ],
       "description": "Responsive sidebar with drawer + theme toggle"
     },
@@ -14,7 +15,8 @@
       "path": "components/sidebar_02",
       "files": [
         "sidebar.dart",
-        "constants.dart"
+        "constants.dart",
+        "Readme.md"
       ],
       "description": "NavigationRail-based desktop sidebar"
     }

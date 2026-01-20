@@ -8,7 +8,7 @@ Supports desktop sidebar and mobile drawer variants.
 ## Installation
 
 ```bash
-pui add sidebar
+pui-inject sidebar
 
 
 //Desktop Usage
