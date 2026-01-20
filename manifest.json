@@ -1,24 +1,126 @@
 {
   "components": {
-    "sidebar01": {
-      "path": "components/sidebar_01",
+    "3D Molded Auth": {
+      "path": "components/3D Molded Auth",
+      "files": [
+        "custom_widgets.dart",
+        "forgot_password.dart",
+        "login_screen.dart",
+        "Readme.md",
+        "signup_screen.dart"
+      ],
+      "description": "A high-fidelity, Stark-themed Flutter authentication component featuring glassmorphism inputs, flowing text animations, and responsive tablet/mobile layouts."
+    },
+    "Bauhus Edition Auth": {
+      "path": "components/Bauhus Edition Auth",
+      "files": [
+        "auth_styles.dart",
+        "forgot_password_screen.dart",
+        "login_screen.dart",
+        "Readme.md",
+        "signup_screen.dart"
+      ],
+      "description": "A strictly responsive (Mobile & Tablet) authentication system inspired by the Bauhaus art movement."
+    },
+    "Bold Typographic Auth": {
+      "path": "components/Bold Typographic Auth",
+      "files": [
+        "auth_background.dart",
+        "auth_styles.dart",
+        "login_screen.dart",
+        "signup_screen.dart"
+      ],
+      "description": "Bold typographic authentication component"
+    },
+    "Cyber Glow Footer": {
+      "path": "components/Cyber Glow Footer",
+      "files": [
+        "Cyber_footer.dart",
+        "Readme.md"
+      ],
+      "description": "A modern, 'detached' floating navigation bar designed for dark-mode apps with glowing neon aesthetic."
+    },
+    "Cyber Terminal Auth": {
+      "path": "components/Cyber Terminal Auth",
+      "files": [
+        "login_screen.dart",
+        "Readme.md",
+        "recovery_screen.dart",
+        "signup_screen.dart",
+        "terminal_style.dart"
+      ],
+      "description": "A high-performance, responsive Terminal-themed authentication component for Flutter with Matrix/Cyberpunk aesthetic."
+    },
+    "Expanding Pill Footer": {
+      "path": "components/Expanding Pill Footer",
+      "files": [
+        "Convex_curve.dart",
+        "Readme.md"
+      ],
+      "description": "A premium, high-fidelity navigation bar with dynamic, multi-colored 'Liquid Pill' that slides and expands."
+    },
+    "Liquid Pill Footer": {
+      "path": "components/Liquid Pill Footer",
+      "files": [
+        "Animated_pill.dart",
+        "Readme.md"
+      ],
+      "description": "A premium, responsive navigation bar with dynamic color liquid pill navigation."
+    },
+    "Modern Sleek Sidebar": {
+      "path": "components/Modern Sleek Sidebar",
       "files": [
         "container.dart",
         "drawer.dart",
         "item.dart",
-        "theme.dart",
-        "Readme.md"
+        "Readme.md",
+        "theme.dart"
       ],
-      "description": "Responsive sidebar with drawer + theme toggle"
+      "description": "A responsive sidebar component for Flutter apps supporting desktop sidebar and mobile drawer variants."
     },
-    "sidebar02": {
-      "path": "components/sidebar_02",
+    "Neumorphic Footer Component": {
+      "path": "components/Neumorphic Footer Component",
       "files": [
-        "sidebar.dart",
-        "constants.dart",
+        "Neumorphic_footer.dart",
         "Readme.md"
       ],
-      "description": "NavigationRail-based desktop sidebar"
+      "description": "A high-fidelity, Neumorphic 'Soft UI' navigation bar with unique color themes and manual inset shadows."
+    },
+    "Basic Drawer": {
+      "path": "components/Basic Drawer",
+      "files": [
+        "constants.dart",
+        "Readme.md",
+        "sidebar.dart"
+      ],
+      "description": "A responsive sidebar component for Flutter (desktop + mobile)."
+    },
+    "Sliding Indicator Footer": {
+      "path": "components/Sliding Indicator Footer",
+      "files": [
+        "Readme.md",
+        "Sliding_indicator.dart"
+      ],
+      "description": "A modern navigation bar with top-aligned sliding indicator for dark-themed applications."
+    },
+    "Spotlight Beam Footer": {
+      "path": "components/Spotlight Beam Footer",
+      "files": [
+        "Readme.md",
+        "Spolight_beam.dart"
+      ],
+      "description": "A high-fidelity, responsive navigation bar with dynamic 'Spotlight Beam' and dual-theme support."
+    },
+    "Stark Brutalist Auth": {
+      "path": "components/Stark Brutalist Auth",
+      "files": [
+        "brutalist_style.dart",
+        "forgot_screen.dart",
+        "login_screen.dart",
+        "Readme.md",
+        "signup_screen.dart"
+      ],
+      "description": "A high-impact, high-contrast Brutalist authentication suite with neon accents."
     }
   }
 }
