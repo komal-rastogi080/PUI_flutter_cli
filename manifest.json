@@ -121,6 +121,97 @@
         "signup_screen.dart"
       ],
       "description": "A high-impact, high-contrast Brutalist authentication suite with neon accents."
+    },
+    "Brutalist Sidebar": {
+      "path": "components/Brutalist Sidebar",
+      "files": [
+        "Readme.md",
+        "sidebar.dart",
+        "theme.dart"
+      ],
+      "description": "A brutalist-styled sidebar component for Flutter."
+    },
+    "Card Checkout Form": {
+      "path": "components/Card Checkout Form",
+      "files": [
+        "form.dart",
+        "Readme.md"
+      ],
+      "description": "A card-based checkout form component for Flutter."
+    },
+    "Cyber Sidebar": {
+      "path": "components/Cyber Sidebar",
+      "files": [
+        "Readme.md",
+        "sidebar.dart",
+        "theme.dart"
+      ],
+      "description": "A cyber-themed sidebar component for Flutter."
+    },
+    "Feedback Form": {
+      "path": "components/Feedback Form",
+      "files": [
+        "form.dart",
+        "Readme.md"
+      ],
+      "description": "A feedback form component for Flutter."
+    },
+    "FrostedGlass Settings": {
+      "path": "components/FrostedGlass Settings",
+      "files": [
+        "Readme.md",
+        "settings_screen.dart"
+      ],
+      "description": "A frosted glass settings screen component for Flutter."
+    },
+    "GlassMorphism Settings": {
+      "path": "components/GlassMorphism Settings",
+      "files": [
+        "Readme.md",
+        "settings_screen.dart"
+      ],
+      "description": "A glassmorphism settings screen component for Flutter."
+    },
+    "Legal Support Settings": {
+      "path": "components/Legal Support Settings",
+      "files": [
+        "glass_screen.dart",
+        "Readme.md"
+      ],
+      "description": "A legal support settings screen component for Flutter."
+    },
+    "Minimal Settings": {
+      "path": "components/Minimal Settings",
+      "files": [
+        "Readme.md",
+        "settings_screen.dart"
+      ],
+      "description": "A minimal settings screen component for Flutter."
+    },
+    "Morphing Sidebar": {
+      "path": "components/Morphing Sidebar",
+      "files": [
+        "Readme.md",
+        "sidebar.dart",
+        "theme.dart"
+      ],
+      "description": "A morphing sidebar component for Flutter."
+    },
+    "Review Form": {
+      "path": "components/Review Form",
+      "files": [
+        "Readme.md",
+        "review_form.dart"
+      ],
+      "description": "A review form component for Flutter."
+    },
+    "Terminal Styled Form": {
+      "path": "components/Terminal Styled Form",
+      "files": [
+        "Readme.md",
+        "terminal_form.dart"
+      ],
+      "description": "A terminal-styled form component for Flutter."
     }
   }
 }
