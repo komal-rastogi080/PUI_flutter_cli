@@ -12,8 +12,11 @@ A high-fidelity, Neumorphic "Soft UI" navigation bar for Flutter. This component
 
 ## 🛠️ Setup Guide
 
-### 1. Create the Component
-Create a new file named `neumorphic_nav.dart` in your `lib/` folder and paste the provided component code there.
+### 1. Install the component
+
+```bash
+pui-inject Neumorphic Footer Component
+```
 
 ### 2. Implementation in main.dart
 Replace the contents of your `main.dart` with the code below to initialize the navigation system.

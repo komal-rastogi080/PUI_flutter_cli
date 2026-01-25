@@ -16,11 +16,9 @@ A high-impact, high-contrast **Brutalist** authentication suite for Flutter. Thi
 ## 🛠️ Installation Guide
 
 ### 1. Project Setup
-Place the following files in your `lib/` directory:
-* `brutalist_style.dart` — *Contains shared colors, typography, and reusable input widgets.*
-* `brutalist_login_screen.dart` — *The primary login interface (Back button removed).*
-* `brutalist_signup_screen.dart` — *The responsive registration interface.*
-
+```bash
+pui-inject Stark Brutalist Auth
+```
 ### 2. Configure `main.dart`
 Initialize the app using the Stark Systems theme:
 

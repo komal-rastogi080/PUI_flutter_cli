@@ -12,10 +12,9 @@ A modern, high-performance Flutter navigation bar featuring a top-aligned slidin
 
 ## 🛠️ Installation
 
-1. Create a new file in your project: `lib/sliding_indicator_nav.dart`.
-2. Paste the provided component code into that file.
-
----
+```bash
+pui-inject Sliding Indicator Footer
+```
 
 ## 🚀 Usage in main.dart
 

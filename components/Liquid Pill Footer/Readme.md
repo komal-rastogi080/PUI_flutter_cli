@@ -12,8 +12,10 @@ A premium, responsive navigation bar for Flutter. The selection pill changes col
 
 ## 🚀 Quick Start
 
-### 1. Create the File
-Create a new file in your `lib/` directory named `dynamic_pill_nav.dart` and paste the component code into it.
+### 1. Installation
+```bash
+pui-inject Liquid Pill Footer
+```
 
 ### 2. Implementation in main.dart
 Use the following simplified code to run the component:

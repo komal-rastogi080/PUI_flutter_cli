@@ -9,6 +9,10 @@ A modern, "detached" floating navigation bar designed for dark-mode apps. It fea
 * **Smart Navigation:** Dynamic active state tracking with icon-specific glow.
 
 ---
+## Installation
+```bash
+pui-inject Cyber Glow Footer
+```
 
 ## 🚀 Usage in main.dart
 

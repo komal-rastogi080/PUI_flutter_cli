@@ -15,11 +15,10 @@ A high-performance, responsive **Terminal-themed** authentication component for 
 
 ## 🛠️ Quick Start
 
-### 1. File Placement
-Copy the following files into your `lib/` directory:
-* `terminal_style.dart` — *Contains theme data and animation logic.*
-* `terminal_login_screen.dart` — *The login UI.*
-* `terminal_signup_screen.dart` — *The signup/registration UI.*
+### 1. Installation
+```bash
+pui-inject Cyber Terminal Auth
+```
 
 ### 2. Update `main.dart`
 Configure your app to start with the Terminal interface:

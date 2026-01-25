@@ -11,7 +11,9 @@ Ensure your `lib` folder contains the following four files for the system to fun
 4.  **`forgot_password_screen.dart`**: The recovery module with Solar Yellow accents and geometric consistency.
 
 ## 🚀 Implementation (main.dart)
-
+```bash
+pui-inject Bauhus Edition Auth
+```
 Replace the contents of your `lib/main.dart` with the code below to initialize the suite.
 
 ```dart

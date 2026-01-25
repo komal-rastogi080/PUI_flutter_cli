@@ -6,11 +6,8 @@ A high-fidelity, Stark-themed Flutter authentication component featuring glassmo
 
 To use the **CyberRecoverScreen** in your project, follow these steps to configure your `main.dart`.
 
-### 1. Project Requirements
-Ensure your project contains the following custom widgets provided in the suite:
-* `CyberField` (Custom inset-shadow input)
-* `CyberButton` (Glow-effect primary action)
-* `FlowingText` (Shader-mask animated typography)
+### 1. Inject the component
+`pui-inject 3D Molded Auth`
 
 ### 2. Modify `main.dart`
 Update your `MaterialApp` to point to the `LoginScreen`. Ensure you set a dark background theme to match the component's aesthetic.

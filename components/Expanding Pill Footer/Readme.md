@@ -16,7 +16,9 @@ A premium, high-fidelity navigation bar for Flutter. This component features a d
 ## 🚀 Quick Start
 
 ### 1. Add the Component
-Create a new file named `lib/centered_pill_nav.dart` and paste the provided component code into it.
+```bash 
+pui-inject Expanding Pill Footer
+```
 
 ### 2. Implementation in main.dart
 Configure your `MaterialApp` with both light and dark themes to enable the automatic theme-switching feature:

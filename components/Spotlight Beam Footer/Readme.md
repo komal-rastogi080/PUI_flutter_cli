@@ -16,8 +16,10 @@ A high-fidelity, responsive navigation bar for Flutter. It features a dynamic "S
 
 ## 🚀 Quick Start
 
-### 1. Add the Component
-Create a new file in your project named `lib/spotlight_nav.dart` and paste the component code into it.
+### 1. Install the component
+```bash
+pui-inject Spotlight Beam Footer
+```
 
 ### 2. Implementation in main.dart
 Use the following code to initialize the app. This configuration handles the automatic theme switching between Light and Dark modes:
