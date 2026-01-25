@@ -13,7 +13,7 @@ This setup uses a `LayoutBuilder` to toggle between the **Mobile Drawer** (with 
 ```dart
 import 'package:flutter/material.dart';
 import 'theme.dart';
-import 'custom_sidebar.dart';
+import 'sidebar.dart';
 
 void main() => runApp(const MyApp());
 

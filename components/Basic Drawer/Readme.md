@@ -32,29 +32,149 @@ To use this toolkit, integrate it into your main `Scaffold`. You can use a `Layo
 
 
 ```dart
-Scaffold(
-  key: _scaffoldKey,
-  // The Drawer is triggered on mobile layouts
-  drawer: SidebarDrawer(
-    selectedIndex: _currentIndex,
-    isDarkMode: _isDark,
-    onItemSelected: (index) => setState(() => _currentIndex = index),
-    onThemeToggle: _handleThemeToggle,
-  ),
-  body: Row(
-    children: [
-      // The Sidebar is displayed on larger screens
-      if (MediaQuery.of(context).size.width > 600)
-        Sidebar(
-          isExpanded: _isSidebarExpanded,
-          isDarkMode: _isDark,
-          selectedIndex: _currentIndex,
-          onItemSelected: (index) => setState(() => _currentIndex = index),
-          onThemeToggle: _handleThemeToggle,
-        ),
-      Expanded(
-        child: Center(child: Text("Current Page Index: $_currentIndex")),
+import 'package:flutter/material.dart';
+import 'Basic Drawer/sidebar.dart';
+import 'Basic Drawer/constants.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  // Global state for Theme and Navigation
+  bool _isDarkMode = true;
+  int _selectedIndex = 0;
+  bool _isExpanded = true;
+
+  void _toggleTheme() {
+    setState(() {
+      _isDarkMode = !_isDarkMode;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'PUI Sidebar Demo',
+      // Apply Theme based on state
+      theme: ThemeData(
+        brightness: Brightness.light,
+        primarySwatch: Colors.deepPurple,
+        useMaterial3: true,
       ),
-    ],
-  ),
-);
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        primarySwatch: Colors.deepPurple,
+        useMaterial3: true,
+        scaffoldBackgroundColor: const Color(0xFF0A0A0A),
+        cardColor: const Color(0xFF121212),
+      ),
+      themeMode: _isDarkMode ? ThemeMode.dark : ThemeMode.light,
+      home: Scaffold(
+        // Implementation for Mobile: Shows the Drawer when screen is narrow
+        drawer: SidebarDrawer(
+          selectedIndex: _selectedIndex,
+          isDarkMode: _isDarkMode,
+          onThemeToggle: _toggleTheme,
+          onItemSelected: (index) {
+            setState(() => _selectedIndex = index);
+          },
+        ),
+        body: LayoutBuilder(
+          builder: (context, constraints) {
+            bool isMobile = constraints.maxWidth < 800;
+
+            return Row(
+              children: [
+                // Implementation for Desktop: Shows the Sidebar
+                if (!isMobile)
+                  Sidebar(
+                    isExpanded: _isExpanded,
+                    isDarkMode: _isDarkMode,
+                    selectedIndex: _selectedIndex,
+                    onThemeToggle: _toggleTheme,
+                    onItemSelected: (index) {
+                      setState(() => _selectedIndex = index);
+                    },
+                  ),
+
+                // Main Content Area
+                Expanded(
+                  child: Column(
+                    children: [
+                      _buildTopBar(isMobile),
+                      Expanded(
+                        child: _buildMainContent(),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          },
+        ),
+      ),
+    );
+  }
+
+  // A simple AppBar-like widget to handle expansion toggle and mobile menu
+  Widget _buildTopBar(bool isMobile) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      decoration: BoxDecoration(
+        border: Border(bottom: BorderSide(color: Theme.of(context).dividerColor, width: 0.5)),
+      ),
+      child: Row(
+        children: [
+          if (isMobile)
+            Builder(builder: (context) {
+              return IconButton(
+                icon: const Icon(Icons.menu),
+                onPressed: () => Scaffold.of(context).openDrawer(),
+              );
+            })
+          else
+            IconButton(
+              icon: Icon(_isExpanded ? Icons.menu_open : Icons.menu),
+              onPressed: () => setState(() => _isExpanded = !_isExpanded),
+            ),
+          const SizedBox(width: 12),
+          Text(
+            AppConstants.navItems[_selectedIndex].label,
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildMainContent() {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            AppConstants.navItems[_selectedIndex].icon,
+            size: 100,
+            color: Colors.deepPurple,
+          ),
+          const SizedBox(height: 20),
+          Text(
+            "Welcome to ${AppConstants.navItems[_selectedIndex].label}",
+            style: Theme.of(context).textTheme.headlineMedium,
+          ),
+          const SizedBox(height: 10),
+          const Text("Select different items to change state."),
+        ],
+      ),
+    );
+  }
+}

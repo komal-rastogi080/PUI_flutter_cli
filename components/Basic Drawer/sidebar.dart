@@ -94,8 +94,8 @@ class SidebarDrawer extends StatelessWidget {
         children: [
           UserAccountsDrawerHeader(
             decoration: BoxDecoration(color: theme.colorScheme.primaryContainer.withOpacity(0.4)),
-            accountName: const Text("Admin User", style: TextStyle(color: Colors.black)),
-            accountEmail: const Text("admin@pui.com", style: TextStyle(color: Colors.black54)),
+            accountName: Text("Admin User", style: TextStyle(color: (isDarkMode) ? Colors.white : Colors.black)),
+            accountEmail: Text("admin@pui.com", style: TextStyle(color: (isDarkMode) ? Colors.white : Colors.black)),
             currentAccountPicture: const CircleAvatar(backgroundColor: Colors.deepPurple, child: Icon(Icons.person, color: Colors.white)),
           ),
           Expanded(
