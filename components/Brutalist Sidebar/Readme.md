@@ -20,72 +20,95 @@ Copy the following code into your `main.dart` to set up the state controller and
 
 ```dart
 import 'package:flutter/material.dart';
-import 'Brutalist Sidebar/theme.dart'; // Ensure your BrutalistTheme class is here
 import 'Brutalist Sidebar/sidebar.dart';
+import 'Brutalist Sidebar/theme.dart';
 
-void main() => runApp(const MaterialApp(home: MainScaffold()));
-
-class MainScaffold extends StatefulWidget {
-  const MainScaffold({super.key});
-
-  @override
-  State<MainScaffold> createState() => _MainScaffoldState();
+void main() {
+  runApp(const BrutalistApp());
 }
 
-class _MainScaffoldState extends State<MainScaffold> {
-  bool _isDark = true;
-  int _currentIndex = 0;
+class BrutalistApp extends StatefulWidget {
+  const BrutalistApp({super.key});
 
-  // Syncing themes based on the toggle state
-  late BrutalistTheme _currentTheme;
+  @override
+  State<BrutalistApp> createState() => _BrutalistAppState();
+}
 
-  void _toggleTheme() {
-    setState(() {
-      _isDark = !_isDark;
-    });
-  }
+class _BrutalistAppState extends State<BrutalistApp> {
+  bool isDark = true;
 
   @override
   Widget build(BuildContext context) {
-    // Dynamically select theme based on state
-    _currentTheme = _isDark ? BrutalistTheme.night : BrutalistTheme.day;
+    final BrutalistTheme theme =
+    isDark ? BrutalistTheme.day : BrutalistTheme.night;
 
-    bool isDesktop = MediaQuery.of(context).size.width >= 768;
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: LayoutBuilder(
+        builder: (context, constraints) {
+          final isMobile = constraints.maxWidth < 768;
 
-    return Scaffold(
-      // The background now syncs with the sidebar theme
-      backgroundColor: _currentTheme.panel == Colors.black ? Colors.black : Colors.white,
+          return Scaffold(
+            backgroundColor: theme.background,
 
-      drawer: isDesktop ? null : BrutalistSidebar(
-        theme: _currentTheme,
-        onToggleTheme: _toggleTheme,
-      ),
+            /*──────── MOBILE: Drawer ────────*/
+            drawer: isMobile
+                ? Drawer(
+              backgroundColor: Colors.transparent,
+              child: BrutalistSidebar(
+                theme: theme,
+                onToggleTheme: () {
+                  setState(() => isDark = !isDark);
+                },
+              ),
+            )
+                : null,
 
-      body: Row(
-        children: [
-          if (isDesktop)
-            BrutalistSidebar(
-              theme: _currentTheme,
-              onToggleTheme: _toggleTheme,
-            ),
-
-          // Main Content Area synced with the sidebar's theme
-          Expanded(
-            child: Container(
-              color: _isDark ? Colors.black : Colors.white,
-              child: Center(
-                child: Text(
-                  "SYSTEM_BLOCK_0$_currentIndex",
-                  style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.w900,
-                    color: _isDark ? Colors.white : Colors.black,
-                  ),
+            /*──────── APP BAR (MOBILE ONLY) ────────*/
+            appBar: isMobile
+                ? AppBar(
+              backgroundColor: theme.panel,
+              elevation: 0,
+              leading: Builder(
+                builder: (context) => IconButton(
+                  icon: Icon(Icons.menu, color: theme.text),
+                  onPressed: () => Scaffold.of(context).openDrawer(),
                 ),
               ),
+            )
+                : null,
+
+            /*──────── BODY ────────*/
+            body: Row(
+              children: [
+                /*──────── DESKTOP: Sidebar ────────*/
+                if (!isMobile)
+                  BrutalistSidebar(
+                    theme: theme,
+                    onToggleTheme: () {
+                      setState(() => isDark = !isDark);
+                    },
+                  ),
+
+                /*──────── MAIN CONTENT ────────*/
+                Expanded(
+                  child: Container(
+                    color: theme.background,
+                    alignment: Alignment.center,
+                    child: Text(
+                      "CONTENT AREA",
+                      style: TextStyle(
+                        color: theme.text,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ),
-        ],
+          );
+        },
       ),
     );
   }
